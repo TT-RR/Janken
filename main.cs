@@ -35,6 +35,8 @@ namespace Janken
                 handImage = Properties.Resources.paper;
             }
             prayerHand.Image = handImage;
+            
+            baihiwdsfhdoih
         }
 
     }
