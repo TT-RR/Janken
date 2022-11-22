@@ -40,5 +40,14 @@ namespace Janken
             prayerHand.Image = handImage;
         }
 
+        private void rookHand_Click(object sender,EventArgs e)
+        {
+            prayerHand.Image=handImage;
+
+            //敵の手をランダムに決める
+            var random=new Random();
+            var enemyHandValue=random.Next(0.3);
+        }
+
     }
 }
