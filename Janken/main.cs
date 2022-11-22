@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,30 +16,54 @@ namespace Janken
         {
             InitializeComponent();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            //5-7まで
+
+            //画面の初期化
+            //手を選択できないようにする
+            rookHand.Enabled = false;
+            scissorsHand.Enabled = false;
+            paperHand.Enabled = false;
+
+        }
         
-         private void rookHand_Click(object sender, EventArgs e)
+         private void rookHand_Click(object sender, EventArgs e)//グーの処理
         {
             // プレイヤーの手をグーにする
-            var playerHand = JyankenHand.Rock;
+            var playerHand = JankenHand.Rock;
             Battle(playerHand);
         }
 
+          private void paperHand_Click(object sender, EventArgs e)//チョキを表示する処理
+        {
+            // プレイヤーの手パーにする
+            var playerHand = JankenHand.Paper;
+            Battle(playerHand);
+        }
+
+          private void scissorsHand_Click(object sender, EventArgs e)//playerHandにパーを表示する処理
+        {
+            // プレイヤーの手をチョキにする
+            var playerHand = JankenHand.Scissors;
+            Battle(playerHand);
+        }
         
-         private void Battle(JyankenHand playerHand)
+         private void Battle(JankenHand playerHand)//勝ち負けの判定
         {
             //プレイヤーの手に応じた画像をゲームエリアに表示する
-
             playerHandBox.Image = GetHandImage(playerHand);
 
             //敵の手をランダムに決める
             var random = new Random();
             var enemyHandValue = random.Next(0, 3);//0~2までのランダムな数値
-            var enemyHand = (JyankenHand)enemyHandValue;//列挙型にキャスト
+            var enemyHand = (JankenHand)enemyHandValue;//列挙型にキャスト
             //敵の手に応じた画像をゲームエリアに表示
             enemyHandBox.Image = GetHandImage(enemyHand);//enemyHandにはランダムの値が入っている。
 
             //勝敗を判定する
-            JyankenResult jyankenResult;
+            JankenResult jankenResult;
             if (playerHand == enemyHand)
             {
                 jankenResult = JankenResult.Even;
@@ -71,7 +95,6 @@ namespace Janken
         //グーをクリックすると、
         {
            
-
             Image handImage;
             if(hand==JankenHand.Rock)
             {
@@ -90,6 +113,20 @@ namespace Janken
             return handImage;//選ばれた手の列挙型の値を返す（0,1,2）
         }
         
+
+         private void startButton_Click(object sender, EventArgs e)
+        {
+            //スタートボタンが押されたら、それぞれの手を押せるようにする。
+            rookHand.Enabled = true;
+            scissorsHand.Enabled = true;
+            paperHand.Enabled = true;
+
+            //自分と相手の手を非表示にする
+            playerHandBox.Image = null;
+            enemyHandBox.Image = null;
+
+            MessageBox.Show("ゲームスターと");
+        }
 
     }
 }
