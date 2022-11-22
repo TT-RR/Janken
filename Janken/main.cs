@@ -16,12 +16,61 @@ namespace Janken
         {
             InitializeComponent();
         }
+        
+         private void rookHand_Click(object sender, EventArgs e)
+        {
+            // プレイヤーの手をグーにする
+            var playerHand = JyankenHand.Rock;
+            Battle(playerHand);
+        }
 
-        private void rookHand_Click(object sender, EventArgs e)
+        
+         private void Battle(JyankenHand playerHand)
+        {
+            //プレイヤーの手に応じた画像をゲームエリアに表示する
+
+            playerHandBox.Image = GetHandImage(playerHand);
+
+            //敵の手をランダムに決める
+            var random = new Random();
+            var enemyHandValue = random.Next(0, 3);//0~2までのランダムな数値
+            var enemyHand = (JyankenHand)enemyHandValue;//列挙型にキャスト
+            //敵の手に応じた画像をゲームエリアに表示
+            enemyHandBox.Image = GetHandImage(enemyHand);//enemyHandにはランダムの値が入っている。
+
+            //勝敗を判定する
+            JyankenResult jyankenResult;
+            if (playerHand == enemyHand)
+            {
+                jankenResult = JankenResult.Even;
+            }
+            else if ((playerHand == JankenHand.Rock && enemyHand == JankenHand.Scissors) || (playerHand == JankenHand.Scissors && enemyHand == JankenHand.Paper) || (playerHand == JankenHand.Paper && enemyHand == JankenHand.Rock))
+            {
+                jankenResult = JankenResult.Win;//勝ち
+            }
+            else
+            {
+                jankenResult = JankenResult.Losing;//負け
+            }
+            switch (jankenResult)
+            {
+                case JankenResult.Even:
+                    MessageBox.Show("あいこです");
+                    break;
+                case JankenResult.Win:
+                    MessageBox.Show("勝ちです");
+                    break;
+                case JankenResult.Losing:
+                    MessageBox.Show("負けです");
+                    break;
+                default:
+                    break;
+            }
+        }
+        private void GetHandImage(jankenHand hand)//元々rookHand_clickだったが、関数の抽出で関数化させている。
         //グーをクリックすると、
         {
-            var hand = JankenHand.Rock;
-            //プレイヤーの手をグーにする
+           
 
             Image handImage;
             if(hand==JankenHand.Rock)
@@ -37,16 +86,8 @@ namespace Janken
                 handImage = Properties.Resources.paper;
             }
             //押された手に応じた画像をプレイヤーの手にする
-            prayerHand.Image = handImage;
-        }
-
-        private void rookHand_Click(object sender,EventArgs e)
-        {
-            prayerHand.Image=handImage;
-
-            //敵の手をランダムに決める
-            var random=new Random();
-            var enemyHandValue=random.Next(0.3);
+            //prayerHand.Image = handImage;
+            return handImage;//選ばれた手の列挙型の値を返す（0,1,2）
         }
 
     }
