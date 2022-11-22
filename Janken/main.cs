@@ -89,6 +89,7 @@ namespace Janken
             //prayerHand.Image = handImage;
             return handImage;//選ばれた手の列挙型の値を返す（0,1,2）
         }
+        
 
     }
 }
