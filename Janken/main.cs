@@ -125,7 +125,7 @@ namespace Janken
             playerHandBox.Image = null;
             enemyHandBox.Image = null;
 
-            MessageBox.Show("ゲームスターと");
+            MessageBox.Show("ゲームスタート");
         }
 
     }
