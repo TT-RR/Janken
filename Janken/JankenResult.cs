@@ -2,8 +2,8 @@ namespace Janken
 {
     enum JankenResult
     {
-        Even;
-        Win;
-        Losing;
+        Even,
+        Win,
+        Losing
     }
 }

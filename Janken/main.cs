@@ -36,19 +36,9 @@ namespace Janken
             Battle(playerHand);
         }
 
-          private void paperHand_Click(object sender, EventArgs e)//チョキを表示する処理
-        {
-            // プレイヤーの手パーにする
-            var playerHand = JankenHand.Paper;
-            Battle(playerHand);
-        }
+       
 
-          private void scissorsHand_Click(object sender, EventArgs e)//playerHandにパーを表示する処理
-        {
-            // プレイヤーの手をチョキにする
-            var playerHand = JankenHand.Scissors;
-            Battle(playerHand);
-        }
+       
         
          private void Battle(JankenHand playerHand)//勝ち負けの判定
         {
@@ -91,7 +81,7 @@ namespace Janken
                     break;
             }
         }
-        private void GetHandImage(jankenHand hand)//元々rookHand_clickだったが、関数の抽出で関数化させている。
+        private static Image GetHandImage(JankenHand hand)//元々rookHand_clickだったが、関数の抽出で関数化させている。
         //グーをクリックすると、
         {
            
@@ -114,7 +104,28 @@ namespace Janken
         }
         
 
-         private void startButton_Click(object sender, EventArgs e)
+        
+
+        private void enemyHandBox_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void paperHand_Click_1(object sender, EventArgs e)
+        {
+            // プレイヤーの手パーにする
+            var playerHand = JankenHand.Paper;
+            Battle(playerHand);
+        }
+
+        private void scissorsHand_Click_1(object sender, EventArgs e)
+        {
+            // プレイヤーの手をチョキにする
+            var playerHand = JankenHand.Scissors;
+            Battle(playerHand);
+        }
+
+        private void startButton_Click_1(object sender, EventArgs e)
         {
             //スタートボタンが押されたら、それぞれの手を押せるようにする。
             rookHand.Enabled = true;
@@ -127,7 +138,6 @@ namespace Janken
 
             MessageBox.Show("ゲームスタート");
         }
-
     }
 }
 //

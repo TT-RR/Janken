@@ -8,3 +8,13 @@ C:\Users\user\source\repos\Janken\obj\Debug\Janken.csproj.CoreCompileInputs.cach
 C:\Users\user\source\repos\Janken\obj\Debug\Janken.exe
 C:\Users\user\source\repos\Janken\obj\Debug\Janken.pdb
 C:\Users\user\source\repos\Janken\obj\Debug\Janken.main.resources
+C:\Users\user\Desktop\Janken-main\Janken-main\Janken\obj\Debug\Janken.csproj.AssemblyReference.cache
+C:\Users\user\Desktop\Janken-main\Janken-main\Janken\obj\Debug\Janken.main.resources
+C:\Users\user\Desktop\Janken-main\Janken-main\Janken\obj\Debug\Janken.Properties.Resources.resources
+C:\Users\user\Desktop\Janken-main\Janken-main\Janken\obj\Debug\Janken.csproj.GenerateResource.cache
+C:\Users\user\Desktop\Janken-main\Janken-main\Janken\obj\Debug\Janken.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\Janken-main\Janken-main\Janken\obj\Debug\Janken.exe
+C:\Users\user\Desktop\Janken-main\Janken-main\Janken\obj\Debug\Janken.pdb
+C:\Users\user\Desktop\Janken-main\Janken-main\Janken\bin\Debug\Janken.exe.config
+C:\Users\user\Desktop\Janken-main\Janken-main\Janken\bin\Debug\Janken.exe
+C:\Users\user\Desktop\Janken-main\Janken-main\Janken\bin\Debug\Janken.pdb

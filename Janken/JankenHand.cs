@@ -6,4 +6,11 @@
         Scissors,
         Paper
     }
+    enum JankenResult
+    {
+        Even,
+        Win,
+        Losing
+    }
+
 }
