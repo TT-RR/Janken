@@ -103,7 +103,6 @@ namespace Janken
                     //敵のHPバー減らす
                     enemyLife.Attack();
                     MessageBox.Show("勝ちです");
-                    wonCount += 1;
                     winLossResults[roundCount - 1].Image = Properties.Resources.circle;
                     break;
 
@@ -111,7 +110,6 @@ namespace Janken
                     //プレイヤーのHPバー減らす
                     playerLife.Attack();
                     MessageBox.Show("負けです");
-                    lossCount += 1;
                     winLossResults[roundCount - 1].Image = Properties.Resources.cross;
                     break;
 
