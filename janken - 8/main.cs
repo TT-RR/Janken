@@ -274,12 +274,14 @@ namespace Janken
 
         private void QuitToolStripMenuItem_Click(object sender, EventArgs e)
         {
+             //終了を押したとき
             Close();
         }
 
      
         private void AboutToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
+            //情報ボタンを押したときの処理
             using (var aboutBox = new AboutBox())
             {
                 aboutBox.ShowDialog();
